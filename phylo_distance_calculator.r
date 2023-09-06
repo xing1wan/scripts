@@ -1,5 +1,5 @@
 # To use at puhti, unhashtag the following line, and make sure the packages are installed
-.libPaths(c("/scratch/project_2002833/softwares/R", .libPaths()))
+.libPaths(c("/<your_path>", .libPaths()))
 
 library(ape)
 library(tidyverse)
