@@ -29,13 +29,19 @@ try:
                 'id': record.id,
                 'molecular_weight': analysis.molecular_weight(),
                 'isoelectric_point': analysis.isoelectric_point(),
+                
                 'number_of_acidic_amino_acids': count_amino_acids['D'] + count_amino_acids['E'],
                 'number_of_basic_amino_acids': count_amino_acids['R'] + count_amino_acids['H'] + count_amino_acids['K'],
-                'frequency_of_r_group_positively_charged_acids': sum(amino_acid_composition[aa] for aa in 'KRH'),
+                'number_of_polar_r_group': sum(count_amino_acids[aa] for aa in 'STCPNQ'),
+                'number_of_nonpolar_aliphilic_r_group': sum(count_amino_acids[aa] for aa in 'GAVLMI'),
+                'number_of_nonpolar_aromatic_r_group': sum(count_amino_acids[aa] for aa in 'FYW'),
+                
                 'frequency_of_r_group_negatively_charged_acids': sum(amino_acid_composition[aa] for aa in 'DE'),
+                'frequency_of_r_group_positively_charged_acids': sum(amino_acid_composition[aa] for aa in 'KRH'),
                 'frequency_of_polar_r_group': sum(amino_acid_composition[aa] for aa in 'STCPNQ'),
                 'frequency_of_nonpolar_aliphilic_r_group': sum(amino_acid_composition[aa] for aa in 'GAVLMI'),
                 'frequency_of_nonpolar_aromatic_r_group': sum(amino_acid_composition[aa] for aa in 'FYW'),
+                
                 **{f'{aa.lower()}_freq': amino_acid_composition.get(aa, 0) for aa in valid_amino_acids}  # Include individual amino acid compositions
             })
 
@@ -51,6 +57,8 @@ try:
                       'frequency_of_r_group_positively_charged_acids', 'frequency_of_r_group_negatively_charged_acids', 
                       'frequency_of_polar_r_group', 'frequency_of_nonpolar_aliphilic_r_group', 'frequency_of_nonpolar_aromatic_r_group'] \
                     + [f'{aa.lower()}_freq' for aa in valid_amino_acids]
+        # uncomment to use, when calculating for different aspects 
+        #fieldnames = ['id', 'number_of_acidic_amino_acids', 'number_of_basic_amino_acids', 'number_of_polar_r_group', 'number_of_nonpolar_aliphilic_r_group', 'number_of_nonpolar_aromatic_r$
         writer = csv.DictWriter(out_file, fieldnames=fieldnames)
         
         writer.writeheader()
