@@ -6,7 +6,7 @@ if len(sys.argv) != 3:
     print("Usage: python script.py <input_directory> <output.csv>")
     sys.exit(1)
 
-input_dir = sys.argv[1]  # Input directory containing .ss2 files
+input_dir = sys.argv[1]  # Input directory containing only .ss2 files
 output_file = sys.argv[2]  # Output .csv file
 
 # Open output CSV file
