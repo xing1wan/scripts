@@ -33,17 +33,17 @@ if __name__ == "__main__":
 def input_sbs_positions():
     positions = []
     print("Enter the SBS positions (0-based indexing). Type 'end' to finish:")
-    
+
     while True:
         position = input("Position (or type 'end' to finish): ")
-        
+
         if position.isdigit():
             positions.append(int(position))
         elif position.lower() == 'end':
             break
         else:
             print("Invalid input. Please enter a numeric position or type 'end' to finish.")
-            
+
     return positions
 
 def input_multiple_sbs_positions():
@@ -79,11 +79,10 @@ if choice.lower() == 'yes' or choice.lower() == 'y':
     print(f"Using positions '{positions}'")
     if not positions:  # Check if positions is empty
         print("No valid positions were inputted. Using default positions.")
-        positions = [162, 311, 481, 487, 625, 629, 743, 842, 1049, 1322, 1745, 1861, 1895, 1973, 2003, 2038, 2108, 2773, 3045, 3101, 3401, 3504, 3507, 3556, 3558]
+        positions = [685,691,694,708,840,841,856,1157,1173,1180,1998,2063,2065,2083,2090,2207,2210,2273,2550,2618,2619,2629,2630,26$
 else:
     # Use default positions
-    # positions = [183, 184, 185, 186, 231, 233, 234, 309, 310, 311, 528, 533, 541, 549, 551, 611, 612, 615, 699, 706, 707, 708, 709, 711, 724]
-    positions = [162, 311, 481, 487, 625, 629, 743, 842, 1049, 1322, 1745, 1861, 1895, 1973, 2003, 2038, 2108, 2773, 3045, 3101, 3401, 3504, 3507, 3556, 3558]
+    positions = [685,691,694,708,840,841,856,1157,1173,1180,1998,2063,2065,2083,2090,2207,2210,2273,2550,2618,2619,2629,2630,2639,2$
 
 # Extract amino acids
 amino_acids_dict = extract_specified_amino_acids(args.input, positions)
