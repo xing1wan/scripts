@@ -3,7 +3,7 @@ import os
 import csv
 
 if len(sys.argv) != 3:
-    print("Usage: python script.py <input_directory> <output.csv>")
+    print("Usage: python ss2csv.py <input_directory> <output.csv>")
     sys.exit(1)
 
 input_dir = sys.argv[1]  # Input directory containing only .ss2 files
