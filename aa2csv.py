@@ -6,7 +6,7 @@ from Bio.SeqUtils.ProtParam import ProteinAnalysis
 valid_amino_acids = set('ACDEFGHIKLMNPQRSTVWY')  # Standard amino acids
 
 if len(sys.argv) != 3:
-    print("Usage: python3 aa_composition.py input.fasta output.csv")
+    print("Usage: python3 aa2csv.py input.fasta output.csv")
     sys.exit(1)
 
 input_fasta_file = sys.argv[1]
